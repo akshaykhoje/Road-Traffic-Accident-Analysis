@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+
+{% block title %}Result page{% endblock %}
+
+{% block content %}
+
+<h1>{{ region }}</h1>
+<h1>{{ city }}</h1>
+
+ <ul>
+    {% for result in results %}
+      <li>{{ result }} </li>
+    {% endfor %}
+  </ul>
+
+{% endblock content %}

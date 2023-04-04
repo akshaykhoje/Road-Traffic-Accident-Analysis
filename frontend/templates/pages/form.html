@@ -1,0 +1,30 @@
+{% extends '_base.html' %}
+
+{% block title %}Form page{% endblock %}
+
+{% block content %}
+<form action="{% url 'CityPageView' %}" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="region">Region: </label>
+        <input type="text" class="form-control" id="region" name="region_name" placeholder="Enter region"> 
+    </div>
+    <br/>
+    <div class="form-group">
+        <label for="city">City:</label>
+        <input type="text" class="form-control" id="city" name="city_name" placeholder="Enter city">
+    </div>
+    <br/>
+    <div class="form-group">
+        <label for="state">State:</label>
+        <input type="text" class="form-control" id="state" name="state_name" placeholder="Enter state"> 
+    </div>
+    <br/>
+    <div class="form-group">
+        <label for="country">Country:</label>
+        <input type="text" class="form-control" id="country" name="country_name" placeholder="Enter country">
+    </div>
+    <br/>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock content %}
