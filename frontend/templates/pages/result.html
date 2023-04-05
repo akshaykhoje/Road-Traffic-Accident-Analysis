@@ -1,16 +1,22 @@
-{% extends '_base.html' %}
-
-{% block title %}Result page{% endblock %}
+{% extends "pages/base.html" %}
 
 {% block content %}
 
-<h1>{{ region }}</h1>
-<h1>{{ city }}</h1>
-
- <ul>
-    {% for result in results %}
-      <li>{{ result }} </li>
+    {% for res in results %}
+    <tr>
+        <td>
+            <ul>
+                {% for key, value in res.items %} 
+                  <li>{{key}} - {{value}}</li>
+                {% endfor %}
+            </ul>
+        </td>
+    </tr>
     {% endfor %}
-  </ul>
+
+    {% autoescape off %}
+        {{ plot_div }}
+        {{ plot_div2 }}
+    {% endautoescape %}
 
 {% endblock content %}
